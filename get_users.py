@@ -11,7 +11,7 @@ import random
 import json
 import urllib.request
 import os
-import ConfigParser
+import configparser
 
 
 class InstaBot:
@@ -25,7 +25,8 @@ class InstaBot:
             password:str: The password of the user, if not specified, read from configuration.
         """
 
-        self.Config = ConfigParser.ConfigParser()
+        self.Config = configparser.ConfigParser()
+        self.Config.read("config.ini")
         
         self.user = input('Log in as Veeti or David? ')
         self.user = self.user.capitalize()
